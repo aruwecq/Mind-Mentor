@@ -2,8 +2,7 @@
 export  function Footer() {
   return (
     <div>
-      footer
-      dfgh
+      <h1>footer</h1>
     </div>
   )
 }
