@@ -1,89 +1,142 @@
-// const mentors = [
-//   {
-//     name: "Марина Сополова",
-//     students: "1200 студентов",
-//     language: "Русский",
-//     experience: "Опыт 3 года",
-//     company: "Работает в Google",
-//     role: "Senior UX/UI дизайнер",
-//     description: "Вы узнаете в этом курсы, как создавать сайты с нуля. Научитесь работать программами как Figma, After Effect.",
-//     price: "от 2000 С",
-//     tag: "Технологии",
-//     image: "/your-image.jpg",
-//     rating: "4.5"
-//   },
-//   {
-//     name: "Алексей Иванов",
-//     students: "800 студентов",
-//     language: "Русский",
-//     experience: "Опыт 5 лет",
-//     company: "Работает в Yandex",
-//     role: "UX дизайнер",
-//     description: "Научитесь проектировать интерфейсы и создавать прототипы.",
-//     price: "от 1800 С",
-//     tag: "Дизайн",
-//     image: "/your-image2.jpg",
-//     rating: "4.8"
-//   },
-//    {
-//     name: "Алексей Иванов",
-//     students: "800 студентов",
-//     language: "Русский",
-//     experience: "Опыт 5 лет",
-//     company: "Работает в Yandex",
-//     role: "UX дизайнер",
-//     description: "Научитесь проектировать интерфейсы и создавать прототипы.",
-//     price: "от 1800 С",
-//     tag: "Дизайн",
-//     image: "/your-image2.jpg",
-//     rating: "4.8"
-//   },
-  
-// ];
+import { FaPlay, FaHeart } from "react-icons/fa";
 
-// export default function MentorCardsList() {
-//   return (
-//     <div className="flex flex-wrap gap-6">
-//       {mentors.map((mentor, index) => (
-//         <div key={index} className="my-2 max-w-sm w-full ml-4 mr-4 bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl">
-//           <div className="relative w-full h-60 bg-gray-200">
-//             <img src={mentor.image} alt={mentor.name} className="w-full h-full object-cover" />
+const mentors = [
+  {
+    name: "Марина Сополова",
+    students: "1200 студентов",
+    language: "Русский",
+    experience: "Опыт 3 года",
+    company: "Работает в Google",
+    role: "Senior UX/UI дизайнер",
+    description:
+      "Вы узнаете в этом курсе, как создавать сайты с нуля. Научитесь работать с программами Figma, After Effects.",
+    price: "2000",
+    tag: "Технологии",
+    image: "/your-image.jpg",
+    rating: "4.5",
+  },
+    {
+    name: "Марина Сополова",
+    students: "1200 студентов",
+    language: "Русский",
+    experience: "Опыт 3 года",
+    company: "Работает в Google",
+    role: "Senior UX/UI дизайнер",
+    description:
+      "Вы узнаете в этом курсе, как создавать сайты с нуля. Научитесь работать с программами Figma, After Effects.",
+    price: "2000",
+    tag: "Технологии",
+    image: "/your-image.jpg",
+    rating: "4.5",
+  },
+    {
+    name: "Марина Сополова",
+    students: "1200 студентов",
+    language: "Русский",
+    experience: "Опыт 3 года",
+    company: "Работает в Google",
+    role: "Senior UX/UI дизайнер",
+    description:
+      "Вы узнаете в этом курсе, как создавать сайты с нуля. Научитесь работать с программами Figma, After Effects.",
+    price: "2000",
+    tag: "Технологии",
+    image: "/your-image.jpg",
+    rating: "4.5",
+  },
+];
 
-//             <div className="absolute top-3 left-3 bg-white px-3 py-1 rounded-full shadow text-sm font-semibold flex items-center gap-1">
-//               <span>{mentor.rating}</span>
-//               <span>😊</span>
-//             </div>
+function SmileIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11" fill="#FFD166" />
+      <circle cx="9" cy="10" r="1.5" fill="#000" />
+      <circle cx="15" cy="10" r="1.5" fill="#000" />
+      <path
+        d="M8 14c1 1.5 2.5 2 4 2s3-.5 4-2"
+        stroke="#000"
+        strokeWidth="1.5"
+        fill="none"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
-//             <button className="mt-[-100px] ml-[330px]  w-10 h-10 rounded-full bg-white  flex items-center justify-center">
-//               ▶
-//             </button>
+export default function MentorCardsList() {
+  return (
+    <div className="min-h-screen flex justify-center items-center bg-[#F5F5F5]">
+      <div className="flex gap-6">
+        {mentors.map((mentor, index) => (
+          <div
+            key={index}
+            className="w-[360px] bg-white rounded-[28px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden"
+          >
+            <div className="relative h-[240px]">
+              <img
+                src={mentor.image}
+                alt={mentor.name}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
 
-//             <button className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white shadow flex items-center justify-center">
-//               ❤️
-//             </button>
-//           </div>
+              {/* Rating */}
+              <div className="absolute top-4 left-4 bg-white rounded-full px-3 py-1 shadow flex items-center gap-2">
+                <span className="text-[20px] font-medium text-black">
+                  {mentor.rating}
+                </span>
+                <SmileIcon />
+              </div>
 
-//           <div className="p-5 space-y-3">
-//             <h2 className="text-xl">{mentor.name}</h2>
-//             <p className="text-gray-500">{mentor.students} · {mentor.language}</p>
+              {/* Video */}
+              <button className="absolute right-4 top-1/2 -translate-y-1/2 w-[48px] h-[48px] rounded-full bg-black flex items-center justify-center">
+                <FaPlay className="text-[#FFD166]" size={18} />
+              </button>
 
-//             <div className="flex flex-wrap gap-2">
-//               <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">{mentor.experience}</span>
-//               <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">{mentor.company}</span>
-//               <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">{mentor.role}</span>
-//             </div>
+              {/* Like */}
+              <button className="absolute right-4 bottom-4 w-[48px] h-[48px] rounded-full bg-black flex items-center justify-center">
+                <FaHeart className="text-white" size={18} />
+              </button>
+            </div>
 
-//             <p className="text-gray-700 text-sm leading-relaxed text-left">
-//               {mentor.description}
-//             </p>
+            <div className="p-6">
+              <h2 className="text-[20px] font-semibold text-black">
+                {mentor.name}
+              </h2>
 
-//             <div className="flex items-center justify-between pt-3">
-//               <p className="text-lg font-semibold">{mentor.price}</p>
-//               <span className="px-4 py-4 bg-gray-900 text-white rounded-full text-sm">{mentor.tag}</span>
-//             </div>
-//           </div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
+              <p className="mt-1 text-[14px] text-gray-500">
+                {mentor.students} · {mentor.language}
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="px-4 h-[38px] flex items-center justify-center rounded-full text-[14px] bg-[#EFE9FF] border border-black">
+                  {mentor.experience}
+                </span>
+                <span className="px-4 h-[38px] flex items-center justify-center rounded-full text-[14px] bg-[#E6F6EE] border border-black">
+                  {mentor.company}
+                </span>
+                <span className="px-4 h-[38px] flex items-center justify-center rounded-full text-[14px] bg-[#EAF2FF] border border-black">
+                  {mentor.role}
+                </span>
+              </div>
+
+              <p className="mt-4 text-[14px] text-black leading-relaxed">
+                {mentor.description}
+              </p>
+
+              <div className="mt-6 flex items-center justify-between">
+                <div className="text-black font-semibold text-[18px]">
+                  от {mentor.price} С
+                </div>
+
+                <div className="px-6 h-[56px] bg-[#2B2B2B] rounded-full flex items-center justify-center">
+                  <span className="text-white text-[20px] font-medium">
+                    {mentor.tag}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
